@@ -9,6 +9,7 @@ import { bsc } from "wagmi/chains";
 import { useLang } from "@/lib/i18n";
 import { WalletButton } from "@/components/WalletButton";
 import { RentModal, type RentStage } from "@/components/RentModal";
+import { AgentChat } from "@/components/AgentChat";
 import { encodeRentPayload } from "@/lib/web3/memo";
 import { describeSendError } from "@/lib/web3/errors";
 import { REGISTRY_ADDRESS, RENT_PRICE_BNB, BSCSCAN_TX_BASE } from "@/lib/config";
@@ -236,6 +237,8 @@ export default function AgentProfilePage() {
           </>
         )}
       </div>
+
+      <AgentChat agentId={agent.id} agentName={agent.name} />
 
       {stage !== "idle" && (
         <RentModal
