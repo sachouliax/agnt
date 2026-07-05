@@ -10,6 +10,7 @@ import { useLang } from "@/lib/i18n";
 import { WalletButton } from "@/components/WalletButton";
 import { RentModal, type RentStage } from "@/components/RentModal";
 import { encodeRentPayload } from "@/lib/web3/memo";
+import { describeSendError } from "@/lib/web3/errors";
 import { REGISTRY_ADDRESS, RENT_PRICE_BNB, BSCSCAN_TX_BASE } from "@/lib/config";
 import type { Agent } from "@/lib/agents";
 import type { Rental } from "@/lib/rentals";
@@ -86,8 +87,8 @@ export default function AgentProfilePage() {
         value: parseEther(RENT_PRICE_BNB),
         data: encodeRentPayload({ agentId: agent.id }),
       });
-    } catch {
-      setErrorMessage(t.rent.errorRejected);
+    } catch (err) {
+      setErrorMessage(describeSendError(err, t.rent.errorRejected, t.launch.errorGeneric));
       setStage("error");
       return;
     }

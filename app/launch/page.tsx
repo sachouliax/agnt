@@ -7,6 +7,7 @@ import { useLang } from "@/lib/i18n";
 import { DeployModal, type Stage } from "@/components/DeployModal";
 import { WalletButton } from "@/components/WalletButton";
 import { encodeAgentPayload } from "@/lib/web3/memo";
+import { describeSendError } from "@/lib/web3/errors";
 import { REGISTRY_ADDRESS } from "@/lib/config";
 import type { Agent } from "@/lib/agents";
 
@@ -67,8 +68,8 @@ export default function LaunchPage() {
           description: trimmedDescription,
         }),
       });
-    } catch {
-      setErrorMessage(t.launch.errorRejected);
+    } catch (err) {
+      setErrorMessage(describeSendError(err, t.launch.errorRejected, t.launch.errorGeneric));
       setStage("error");
       return;
     }
