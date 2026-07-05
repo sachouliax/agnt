@@ -131,10 +131,26 @@ export const en = {
   docs: {
     title: "Docs",
     intro:
-      "A field guide to how AGNT actually works — the pipeline, the token, the registry, and what's next.",
+      "A field guide to how AGNT actually works — the pipeline, the token, the registry, and everything you can do. All of it is live in production today.",
+    statusTitle: "Status",
+    statusBadge: "ALL SYSTEMS LIVE",
+    statusText:
+      "AGNT is fully live on BNB Chain. The complete phase-one product — creation, personality, chat, downloadable agent files, the marketplace and hourly rentals — is shipped and working in production right now. Nothing on this page is a mockup, a promise, or a \"coming soon\". If it's described here, you can do it today.",
+    featuresTitle: "What you can do",
+    featuresIntro:
+      "Everything below is live. Each action that touches the chain is a real BNB Chain transaction you can verify on BscScan.",
+    features: [
+      "Create — describe an agent in one sentence, sign one transaction, and it's onchain.",
+      "Personality — pick a tone (Chill, Degen, Analytical, Chaotic, Friendly, Cold) that shapes how it talks.",
+      "Chat — talk to any agent live; it responds in character from its stored identity.",
+      "Download — export any agent as a portable .agnt.json file: identity, personality, system prompt, model, and onchain proof.",
+      "Marketplace — browse every agent the community has launched, open a full profile for each.",
+      "Rent — rent an agent for one hour with a small onchain payment.",
+      "Verify — every creation and every rental is a real transaction, public on BscScan.",
+    ],
     whatTitle: "What is AGNT",
     whatText:
-      "AGNT is the simplest way to put a small autonomous agent onchain on BNB Chain. Describe what you want in plain language, and AGNT deploys it — no code, no infrastructure, no team required. Every agent gets a unique ID, joins the public registry, and becomes visible to the whole community the moment it's live.",
+      "AGNT is the simplest way to put a small autonomous agent onchain on BNB Chain. Describe what you want in plain language, pick a personality, and AGNT deploys it — no code, no infrastructure, no team required. Every agent gets a unique onchain ID, joins the public marketplace, and can be chatted with, downloaded, or rented the moment it's live.",
     architectureTitle: "Architecture",
     architectureIntro:
       "Launching an agent is not a database insert — it's a wallet transaction. Here's what actually happens when you hit deploy.",
@@ -180,22 +196,22 @@ export const en = {
     roadmapTitle: "Roadmap",
     roadmapPhases: [
       {
-        label: "Phase 0",
+        label: "Phase 0 — LIVE",
         status: "done",
-        text: "Launch site, wallet-based agent registry, $AGNT fair launch on four.meme.",
+        text: "Site, wallet-based onchain registry, $AGNT fair launch on four.meme. Done.",
       },
       {
-        label: "Phase 1",
-        status: "active",
-        text: "Agent categories, richer profiles, community filtering.",
+        label: "Phase 1 — LIVE",
+        status: "done",
+        text: "Personality, agent profiles, live AI chat, downloadable agent files, marketplace, hourly rentals. All shipped.",
       },
       {
-        label: "Phase 2",
+        label: "Phase 2 — next",
         status: "planned",
         text: "Agent-to-agent interactions inside the registry.",
       },
       {
-        label: "Phase 3",
+        label: "Phase 3 — next",
         status: "planned",
         text: "Community voting on featured agents.",
       },
@@ -203,8 +219,28 @@ export const en = {
     faqTitle: "FAQ",
     faq: [
       {
+        q: "Is the product finished and live?",
+        a: "Yes. AGNT is fully live on BNB Chain right now. Creation, personality, chat, downloadable agent files, the marketplace and hourly rentals all work in production today — nothing here is a mockup or a promise.",
+      },
+      {
         q: "Do I need to code?",
-        a: "No. Describe your agent in plain language and AGNT deploys it for you.",
+        a: "No. Describe your agent in plain language, pick a personality, and AGNT deploys it for you.",
+      },
+      {
+        q: "Can I talk to an agent?",
+        a: "Yes. Every agent has a live chat on its profile page — it answers in character, based on the description and personality you gave it.",
+      },
+      {
+        q: "Can I download my agent?",
+        a: "Yes. Any agent exports as a portable .agnt.json file containing its full definition — identity, personality, system prompt, model, and its onchain proof.",
+      },
+      {
+        q: "Can I rent an agent?",
+        a: "Yes. Any agent can be rented for one hour for a small onchain payment (0.001 BNB), recorded on BNB Chain.",
+      },
+      {
+        q: "What does the personality do?",
+        a: "It changes how the agent talks. The same description with a different personality — Chill, Degen, Analytical, Chaotic, Friendly or Cold — produces a noticeably different agent.",
       },
       {
         q: "Where does my agent live?",
@@ -381,10 +417,25 @@ export const zh: Dictionary = {
   },
   docs: {
     title: "文档",
-    intro: "关于 AGNT 实际运作方式的完整说明——部署流程、代币机制、注册表，以及接下来的计划。",
+    intro: "关于 AGNT 实际运作方式的完整说明——部署流程、代币机制、注册表，以及你能做的一切。以下所有功能现在都已在生产环境中上线。",
+    statusTitle: "状态",
+    statusBadge: "全部功能已上线",
+    statusText:
+      "AGNT 已在 BNB 链上完全上线。第一阶段的完整产品——创建、性格、聊天、可下载的代理文件、市场以及按小时租用——现在都已发布并在生产环境中运行。本页没有任何一处是样机、承诺或「即将推出」。这里写到的，你今天就能做。",
+    featuresTitle: "你可以做什么",
+    featuresIntro: "以下所有功能都已上线。每一个涉及链上的操作都是一笔真实的 BNB 链交易，可在 BscScan 上核实。",
+    features: [
+      "创建——用一句话描述代理，签署一笔交易，它就上链了。",
+      "性格——选择一种语气（随和、冲动、理性、混乱、友好、冷淡），它会改变代理说话的方式。",
+      "聊天——和任何代理实时对话，它会根据自己的身份保持角色回应。",
+      "下载——把任何代理导出为可携带的 .agnt.json 文件：身份、性格、system prompt、运行模型，以及链上凭证。",
+      "市场——浏览社区创建的每一个代理，打开各自完整的资料页。",
+      "租用——用一笔小额链上付款，按小时租用一个代理。",
+      "核实——每一次创建、每一次租用都是一笔真实交易，在 BscScan 上公开可查。",
+    ],
     whatTitle: "什么是 AGNT",
     whatText:
-      "AGNT 是在 BNB 链上部署小型自主代理最简单的方式。用日常语言描述你想要的东西，AGNT 就会为你部署——无需代码，无需基础设施，无需团队。每个代理上线后都会获得唯一编号，加入公开注册表，向整个社区可见。",
+      "AGNT 是在 BNB 链上部署小型自主代理最简单的方式。用日常语言描述你想要的东西，选一个性格，AGNT 就会为你部署——无需代码，无需基础设施，无需团队。每个代理上线后都会获得唯一的链上编号，进入公开市场，并且可以立刻与它聊天、下载或租用。",
     architectureTitle: "技术架构",
     architectureIntro: "创建一个代理不是简单地写入数据库，而是一笔真实的钱包交易。点击部署后，实际发生的是这些：",
     architectureSteps: [
@@ -429,22 +480,22 @@ export const zh: Dictionary = {
     roadmapTitle: "路线图",
     roadmapPhases: [
       {
-        label: "阶段 0",
+        label: "阶段 0 — 已上线",
         status: "done",
-        text: "网站上线、基于钱包的代理注册表、$AGNT 在 four.meme 公平发射。",
+        text: "网站、基于钱包的链上注册表、$AGNT 在 four.meme 公平发射。已完成。",
       },
       {
-        label: "阶段 1",
-        status: "active",
-        text: "代理分类、更丰富的资料展示、社区筛选功能。",
+        label: "阶段 1 — 已上线",
+        status: "done",
+        text: "性格、代理资料页、实时 AI 聊天、可下载的代理文件、市场、按小时租用。全部已发布。",
       },
       {
-        label: "阶段 2",
+        label: "阶段 2 — 下一步",
         status: "planned",
         text: "注册表内代理与代理之间的互动。",
       },
       {
-        label: "阶段 3",
+        label: "阶段 3 — 下一步",
         status: "planned",
         text: "社区投票推选精选代理。",
       },
@@ -452,8 +503,28 @@ export const zh: Dictionary = {
     faqTitle: "常见问题",
     faq: [
       {
+        q: "产品已经完成并上线了吗？",
+        a: "是的。AGNT 现在已在 BNB 链上完全上线。创建、性格、聊天、可下载的代理文件、市场以及按小时租用，今天都已在生产环境中运行——本页没有任何一处是样机或承诺。",
+      },
+      {
         q: "我需要写代码吗？",
-        a: "不需要。用日常语言描述你的代理，AGNT 会为你部署。",
+        a: "不需要。用日常语言描述你的代理，选一个性格，AGNT 会为你部署。",
+      },
+      {
+        q: "我可以和代理聊天吗？",
+        a: "可以。每个代理的资料页都有实时聊天——它会根据你写的描述和性格，保持角色来回应。",
+      },
+      {
+        q: "我可以下载我的代理吗？",
+        a: "可以。任何代理都能导出为可携带的 .agnt.json 文件，里面包含它的完整定义——身份、性格、system prompt、模型，以及链上凭证。",
+      },
+      {
+        q: "我可以租用代理吗？",
+        a: "可以。任何代理都能以一笔小额链上付款（0.001 BNB）按小时租用，记录在 BNB 链上。",
+      },
+      {
+        q: "性格有什么用？",
+        a: "它会改变代理说话的方式。同样的描述，配上不同的性格——随和、冲动、理性、混乱、友好或冷淡——会得到明显不同的代理。",
       },
       {
         q: "我的代理运行在哪里？",

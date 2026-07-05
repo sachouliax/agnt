@@ -36,11 +36,35 @@ export default function DocsPage() {
         <Typewriter text={t.docs.intro} speed={8} />
       </p>
 
+      <section className="mt-10 border border-yellow-dim bg-surface p-5">
+        <div className="flex items-center gap-2">
+          <span className="inline-block h-2.5 w-2.5 animate-pulse rounded-full bg-yellow" />
+          <span className="font-mono text-xs tracking-widest text-yellow">
+            {t.docs.statusBadge}
+          </span>
+        </div>
+        <p className="mt-3 text-sm text-muted">{t.docs.statusText}</p>
+      </section>
+
       <section className="mt-16">
         <SectionKicker>{t.docs.whatTitle.toUpperCase()}</SectionKicker>
         <p className="text-muted">
           <Typewriter text={t.docs.whatText} speed={6} />
         </p>
+      </section>
+
+      <section className="mt-16">
+        <SectionKicker>{t.docs.featuresTitle.toUpperCase()}</SectionKicker>
+        <p className="mb-5 text-muted">
+          <Typewriter text={t.docs.featuresIntro} speed={6} />
+        </p>
+        <ul className="space-y-2 border border-border bg-surface p-4 font-mono text-sm">
+          {t.docs.features.map((feature) => (
+            <li key={feature} className="flex gap-2 text-muted">
+              <span className="text-yellow">[x]</span> {feature}
+            </li>
+          ))}
+        </ul>
       </section>
 
       <section className="mt-16">
