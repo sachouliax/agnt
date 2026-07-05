@@ -4,10 +4,19 @@ import Link from "next/link";
 import { useLang } from "@/lib/i18n";
 import type { Agent } from "@/lib/agents";
 import { BSCSCAN_TX_BASE } from "@/lib/config";
+import { downloadAgent } from "@/lib/downloadAgent";
 
-export type Stage = "sign" | "broadcast" | "confirm" | "index" | "success" | "error";
+export type Stage =
+  | "sign"
+  | "compile"
+  | "broadcast"
+  | "confirm"
+  | "provision"
+  | "index"
+  | "success"
+  | "error";
 
-const STAGE_ORDER = ["sign", "broadcast", "confirm", "index"] as const;
+const STAGE_ORDER = ["sign", "compile", "broadcast", "confirm", "provision", "index"] as const;
 
 export function DeployModal({
   name,
@@ -103,6 +112,12 @@ export function DeployModal({
               >
                 {t.launch.viewCommunity}
               </Link>
+              <button
+                onClick={() => downloadAgent(agent)}
+                className="rounded-none border border-yellow-dim px-4 py-2 text-sm font-semibold text-yellow hover:bg-yellow hover:text-background"
+              >
+                ↓ {t.launch.downloadAgent}
+              </button>
               <button
                 onClick={onLaunchAnother}
                 className="rounded-none border border-border px-4 py-2 text-sm font-semibold text-foreground hover:border-yellow-dim"

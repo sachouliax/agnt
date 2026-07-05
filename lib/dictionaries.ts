@@ -75,13 +75,16 @@ export const en = {
     deployTitle: "Deploying",
     stages: {
       sign: "Waiting for wallet signature…",
+      compile: "Compiling agent parameters…",
       broadcast: "Broadcasting transaction to BNB Chain…",
       confirm: "Waiting for block confirmation…",
+      provision: "Provisioning autonomous runtime…",
       index: "Indexing agent in the registry…",
     },
     successTitle: "is live",
     agentIdLabel: "Transaction",
     viewCommunity: "View in Marketplace",
+    downloadAgent: "Download agent",
     launchAnother: "Launch another",
   },
   agents: {
@@ -321,13 +324,16 @@ export const zh: Dictionary = {
     deployTitle: "正在部署",
     stages: {
       sign: "等待钱包签名…",
+      compile: "正在编译代理参数…",
       broadcast: "正在广播交易到 BNB 链…",
       confirm: "正在等待区块确认…",
+      provision: "正在配置自主运行环境…",
       index: "正在写入注册表…",
     },
     successTitle: "已上线",
     agentIdLabel: "交易",
     viewCommunity: "在市场查看",
+    downloadAgent: "下载代理",
     launchAnother: "再创建一个",
   },
   agents: {

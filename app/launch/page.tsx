@@ -76,8 +76,10 @@ export default function LaunchPage() {
     }
 
     setTxHash(hash);
+    setStage("compile");
+    await sleep(1400);
     setStage("broadcast");
-    await sleep(300);
+    await sleep(900);
     setStage("confirm");
 
     try {
@@ -93,6 +95,8 @@ export default function LaunchPage() {
       return;
     }
 
+    setStage("provision");
+    await sleep(1600);
     setStage("index");
     try {
       const res = await fetch("/api/agents", {
