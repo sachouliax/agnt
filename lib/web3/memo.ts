@@ -13,3 +13,12 @@ export function encodeAgentPayload(input: {
   });
   return toHex(json);
 }
+
+export function encodeRentPayload(input: { agentId: string }) {
+  const json = JSON.stringify({
+    app: "AGNT",
+    action: "rent",
+    agent: input.agentId,
+  });
+  return toHex(json);
+}

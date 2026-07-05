@@ -11,3 +11,7 @@ export const REGISTRY_ADDRESS = (process.env.NEXT_PUBLIC_REGISTRY_ADDRESS ||
   null) as `0x${string}` | null;
 
 export const BSC_CHAIN_ID = 56;
+
+// Renting an agent is a second small payment tx to the same registry address.
+export const RENT_PRICE_BNB = "0.001";
+export const RENT_DURATION_SECONDS = 60 * 60;

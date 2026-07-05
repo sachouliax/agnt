@@ -9,14 +9,15 @@ const publicClient = createPublicClient({
 
 export type VerifyResult = { ok: true } | { ok: false; error: string };
 
-export async function verifyAgentTransaction(
+async function verifyRegistryTransaction(
   txHash: string,
-  creator: string
+  sender: string,
+  minValueWei?: bigint
 ): Promise<VerifyResult> {
   if (!REGISTRY_ADDRESS) {
     return { ok: false, error: "registry_not_configured" };
   }
-  if (!isHash(txHash) || !isAddress(creator)) {
+  if (!isHash(txHash) || !isAddress(sender)) {
     return { ok: false, error: "invalid_format" };
   }
 
@@ -29,14 +30,25 @@ export async function verifyAgentTransaction(
     if (tx.to?.toLowerCase() !== REGISTRY_ADDRESS.toLowerCase()) {
       return { ok: false, error: "wrong_recipient" };
     }
-    if (tx.from.toLowerCase() !== creator.toLowerCase()) {
+    if (tx.from.toLowerCase() !== sender.toLowerCase()) {
       return { ok: false, error: "wrong_sender" };
     }
     if (receipt.status !== "success") {
       return { ok: false, error: "transaction_failed" };
     }
+    if (minValueWei !== undefined && tx.value < minValueWei) {
+      return { ok: false, error: "insufficient_value" };
+    }
     return { ok: true };
   } catch {
     return { ok: false, error: "verification_failed" };
   }
+}
+
+export function verifyAgentTransaction(txHash: string, creator: string) {
+  return verifyRegistryTransaction(txHash, creator);
+}
+
+export function verifyRentTransaction(txHash: string, renter: string, minValueWei: bigint) {
+  return verifyRegistryTransaction(txHash, renter, minValueWei);
 }
