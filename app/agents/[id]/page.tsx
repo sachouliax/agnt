@@ -87,6 +87,7 @@ export default function AgentProfilePage() {
         to: REGISTRY_ADDRESS,
         value: parseEther(RENT_PRICE_BNB),
         data: encodeRentPayload({ agentId: agent.id }),
+        type: "legacy",
       });
     } catch (err) {
       setErrorMessage(describeSendError(err, t.rent.errorRejected, t.launch.errorGeneric));

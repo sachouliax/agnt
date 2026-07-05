@@ -67,6 +67,7 @@ export default function LaunchPage() {
           category,
           description: trimmedDescription,
         }),
+        type: "legacy",
       });
     } catch (err) {
       setErrorMessage(describeSendError(err, t.launch.errorRejected, t.launch.errorGeneric));
