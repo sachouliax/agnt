@@ -1,0 +1,432 @@
+export type Dictionary = typeof en;
+
+export const en = {
+  nav: {
+    home: "Home",
+    launch: "Launch",
+    agents: "Agents",
+    docs: "Docs",
+    buy: "Buy $AGNT",
+  },
+  common: {
+    contractLabel: "Contract",
+    contractPending: "Live after $AGNT launches",
+    viewOnBscscan: "View on BscScan",
+    bnbChain: "BNB Chain",
+  },
+  wallet: {
+    connect: "Connect Wallet",
+    connecting: "Connecting…",
+    wrongNetwork: "Wrong network",
+    switchNetwork: "Switch to BNB Chain",
+    disconnect: "Disconnect",
+    noWallet: "No wallet found. Install MetaMask or Trust Wallet.",
+  },
+  home: {
+    eyebrow: "BNB CHAIN · AUTONOMOUS AGENTS",
+    title: "Small agents.\nOnchain. Autonomous.",
+    subtitle:
+      "Describe the agent you want in one sentence. AGNT deploys it onchain on BNB Chain — no code, no team, no waiting.",
+    ctaPrimary: "Launch your agent",
+    ctaSecondary: "Read the docs",
+    stepsTitle: "How it works",
+    steps: [
+      {
+        title: "Describe",
+        text: "Write what your agent should do and how it should behave.",
+      },
+      {
+        title: "Deploy",
+        text: "AGNT provisions it onchain on BNB Chain, in seconds.",
+      },
+      {
+        title: "Live",
+        text: "Your agent joins the community — fully autonomous, fully onchain.",
+      },
+    ],
+    proofTitle: "Built in the open. Verifiable onchain.",
+    proofText:
+      "Every AGNT agent leaves a trace on BNB Chain. No black box — check it yourself on BscScan.",
+    bannerTitle: "Your agent. Onchain. In under a minute.",
+    bannerCta: "Launch now",
+  },
+  launch: {
+    title: "Launch your agent",
+    subtitle: "One description. One signature. AGNT handles the rest.",
+    walletGateTitle: "Connect your wallet",
+    walletGateText: "Connect a BNB Chain wallet to deploy an agent onchain.",
+    gasNotice:
+      "You'll sign one small BNB network fee to confirm your agent onchain — usually a fraction of a cent.",
+    registryNotConfigured: "Agent registry not configured yet — check back soon.",
+    fieldName: "Agent name",
+    fieldNamePlaceholder: "e.g. Nightwatch",
+    fieldCategory: "Category",
+    categories: ["Trading", "Social", "Research", "Chaos", "Other"],
+    fieldDescription: "What should it do?",
+    fieldDescriptionPlaceholder:
+      "Describe its purpose and behavior — the more specific, the better.",
+    submit: "Deploy onchain",
+    submitting: "Deploying…",
+    errorName: "Name must be 2–40 characters.",
+    errorDescription: "Description must be 10–280 characters.",
+    errorRejected: "Transaction rejected in wallet.",
+    errorVerification: "Onchain verification failed. Please try again.",
+    errorGeneric: "Something went wrong. Try again.",
+    deployTitle: "Deploying",
+    stages: {
+      sign: "Waiting for wallet signature…",
+      broadcast: "Broadcasting transaction to BNB Chain…",
+      confirm: "Waiting for block confirmation…",
+      index: "Indexing agent in the registry…",
+    },
+    successTitle: "is live",
+    agentIdLabel: "Transaction",
+    viewCommunity: "View in Community",
+    launchAnother: "Launch another",
+  },
+  agents: {
+    title: "Community Agents",
+    subtitle: "Every agent launched by the community. All onchain, all autonomous.",
+    empty: "No agents yet. Be the first to launch one.",
+    emptyCta: "Launch your agent",
+    idLabel: "Tx",
+    creatorLabel: "Creator",
+  },
+  docs: {
+    title: "Docs",
+    intro:
+      "A field guide to how AGNT actually works — the pipeline, the token, the registry, and what's next.",
+    whatTitle: "What is AGNT",
+    whatText:
+      "AGNT is the simplest way to put a small autonomous agent onchain on BNB Chain. Describe what you want in plain language, and AGNT deploys it — no code, no infrastructure, no team required. Every agent gets a unique ID, joins the public registry, and becomes visible to the whole community the moment it's live.",
+    architectureTitle: "Architecture",
+    architectureIntro:
+      "Launching an agent is not a database insert — it's a wallet transaction. Here's what actually happens when you hit deploy.",
+    architectureSteps: [
+      "Input — you describe the agent's purpose and behavior in plain language.",
+      "Signature — your wallet signs a transaction carrying that description as calldata.",
+      "Confirmation — the transaction is broadcast and confirmed on BNB Chain.",
+      "Registry — AGNT indexes that transaction and publishes it to the Community page.",
+    ],
+    lifecycleTitle: "Agent lifecycle",
+    lifecycleIntro: "Once you hit deploy, every agent moves through the same lifecycle states.",
+    lifecycleSteps: [
+      "DRAFT — described on the Launch page, not yet signed.",
+      "DEPLOYING — wallet signature requested, transaction broadcasting to BNB Chain.",
+      "LIVE — confirmed onchain, indexed in the registry, visible to the community.",
+      "ACTIVE — discoverable, filterable by category, permanently part of the AGNT registry.",
+    ],
+    registryTitle: "The registry",
+    registryText:
+      "The registry indexes every agent-creation transaction sent to AGNT's registry address on BNB Chain. Each entry is backed by a real transaction — the name, category and description you write are stored in that transaction's calldata, not just in a database you have to trust. Anyone can browse the index from the Community page, filter by category, and verify the underlying transaction on BscScan.",
+    tokenTitle: "$AGNT token",
+    tokenIntro:
+      "$AGNT is the community token behind the project, launched on BNB Chain via four.meme. It has no presale and no team allocation beyond four.meme's standard launch mechanism — everyone enters through the same curve.",
+    launchMechanismTitle: "Fair launch mechanism",
+    launchMechanismIntro:
+      "$AGNT launches through four.meme's bonding-curve model, the same fair-launch mechanism used across BNB Chain memecoins.",
+    launchSteps: [
+      "Bonding curve — early buyers purchase directly from the curve, price adjusts with supply.",
+      "Curve completion — once the curve fills, liquidity is generated automatically.",
+      "DEX migration — liquidity migrates to a public DEX pool.",
+      "Open trading — $AGNT trades freely, verifiable onchain at any time.",
+    ],
+    verificationTitle: "Verify it yourself",
+    verificationText:
+      "AGNT doesn't ask you to trust a dashboard. Every agent is created by a real wallet transaction on BNB Chain — its calldata, sender and confirmation are all public. The $AGNT token works the same way: contract, holders and liquidity all live onchain and can be checked independently on BscScan.",
+    verificationPoints: [
+      "Any agent's transaction hash, sender address and calldata",
+      "Contract creation transaction and creator address",
+      "Total holder count and distribution",
+      "Liquidity pool status and lock, if any",
+      "Every transfer, in and out, timestamped onchain",
+    ],
+    roadmapTitle: "Roadmap",
+    roadmapPhases: [
+      {
+        label: "Phase 0",
+        status: "done",
+        text: "Launch site, wallet-based agent registry, $AGNT fair launch on four.meme.",
+      },
+      {
+        label: "Phase 1",
+        status: "active",
+        text: "Agent categories, richer profiles, community filtering.",
+      },
+      {
+        label: "Phase 2",
+        status: "planned",
+        text: "Agent-to-agent interactions inside the registry.",
+      },
+      {
+        label: "Phase 3",
+        status: "planned",
+        text: "Community voting on featured agents.",
+      },
+    ],
+    faqTitle: "FAQ",
+    faq: [
+      {
+        q: "Do I need to code?",
+        a: "No. Describe your agent in plain language and AGNT deploys it for you.",
+      },
+      {
+        q: "Where does my agent live?",
+        a: "Onchain, on BNB Chain. Every agent is a real transaction — its calldata, sender and confirmation are all verifiable on BscScan.",
+      },
+      {
+        q: "Do I need a wallet?",
+        a: "Yes. Creating an agent means signing a real BNB Chain transaction, so you need a wallet like MetaMask or Trust Wallet with a small amount of BNB for network fees.",
+      },
+      {
+        q: "Does it cost anything to launch an agent?",
+        a: "Just the BNB network fee for one transaction — usually a fraction of a cent. AGNT itself doesn't charge anything.",
+      },
+      {
+        q: "Is $AGNT an investment?",
+        a: "$AGNT is a community token on BNB Chain. Nothing on this site is financial advice — always do your own research.",
+      },
+      {
+        q: "Can anyone launch an agent?",
+        a: "Yes. Anyone with a wallet can describe and launch an agent from the Launch page.",
+      },
+      {
+        q: "Is there a limit on how many agents I can launch?",
+        a: "No hard limit. Each one needs its own name and description, and its own signed transaction.",
+      },
+      {
+        q: "Can I edit an agent after launch?",
+        a: "No. Once a transaction confirms onchain it can't be changed — describe it carefully the first time.",
+      },
+      {
+        q: "Do agents interact with each other?",
+        a: "Not yet. Agent-to-agent interaction is on the roadmap (Phase 2).",
+      },
+      {
+        q: "Is the $AGNT contract renounced? Is liquidity locked?",
+        a: "Check the contract directly on BscScan once it's live — don't take anyone's word for it, including ours.",
+      },
+      {
+        q: "What happens to the info I submit when I launch an agent?",
+        a: "Your agent name, category and description are written directly into your transaction's calldata on BNB Chain — permanent and public the moment it confirms. AGNT's registry only indexes that transaction for fast browsing; it isn't the source of truth.",
+      },
+    ],
+  },
+  footer: {
+    tagline: "Small agents. Onchain. Autonomous.",
+    rights: "Community project. Not financial advice.",
+  },
+};
+
+export const zh: Dictionary = {
+  nav: {
+    home: "首页",
+    launch: "创建",
+    agents: "社区代理",
+    docs: "文档",
+    buy: "购买 $AGNT",
+  },
+  common: {
+    contractLabel: "合约地址",
+    contractPending: "$AGNT 上线后开放",
+    viewOnBscscan: "在 BscScan 查看",
+    bnbChain: "BNB 链",
+  },
+  wallet: {
+    connect: "连接钱包",
+    connecting: "连接中…",
+    wrongNetwork: "网络不正确",
+    switchNetwork: "切换到 BNB 链",
+    disconnect: "断开连接",
+    noWallet: "未检测到钱包，请安装 MetaMask 或 Trust Wallet。",
+  },
+  home: {
+    eyebrow: "BNB 链 · 自主链上代理",
+    title: "小小的代理，\n链上，自主运行。",
+    subtitle:
+      "用一句话描述你想要的代理。AGNT 会把它部署到 BNB 链上——无需代码，无需团队，无需等待。",
+    ctaPrimary: "创建你的代理",
+    ctaSecondary: "查看文档",
+    stepsTitle: "运作方式",
+    steps: [
+      {
+        title: "描述",
+        text: "写下你的代理应该做什么、如何表现。",
+      },
+      {
+        title: "部署",
+        text: "AGNT 在几秒内将它部署到 BNB 链上。",
+      },
+      {
+        title: "上线",
+        text: "你的代理加入社区——完全自主，完全链上。",
+      },
+    ],
+    proofTitle: "公开构建，链上可验证。",
+    proofText: "每一个 AGNT 代理都会在 BNB 链上留下痕迹。没有黑箱——你可以在 BscScan 上自行核实。",
+    bannerTitle: "你的代理，链上，不到一分钟。",
+    bannerCta: "立即创建",
+  },
+  launch: {
+    title: "创建你的代理",
+    subtitle: "一段描述，一次签名，剩下的交给 AGNT。",
+    walletGateTitle: "连接你的钱包",
+    walletGateText: "连接一个 BNB 链钱包，才能将代理部署上链。",
+    gasNotice: "你需要签署一笔很小的 BNB 网络手续费来确认代理上链——通常只需几分钱。",
+    registryNotConfigured: "代理注册表尚未配置，请稍后再来。",
+    fieldName: "代理名称",
+    fieldNamePlaceholder: "例如 Nightwatch",
+    fieldCategory: "分类",
+    categories: ["交易", "社交", "研究", "混沌", "其他"],
+    fieldDescription: "它应该做什么？",
+    fieldDescriptionPlaceholder: "描述它的目的和行为方式——越具体越好。",
+    submit: "链上部署",
+    submitting: "部署中…",
+    errorName: "名称长度需为 2–40 个字符。",
+    errorDescription: "描述长度需为 10–280 个字符。",
+    errorRejected: "交易在钱包中被拒绝。",
+    errorVerification: "链上验证失败，请重试。",
+    errorGeneric: "出错了，请重试。",
+    deployTitle: "正在部署",
+    stages: {
+      sign: "等待钱包签名…",
+      broadcast: "正在广播交易到 BNB 链…",
+      confirm: "正在等待区块确认…",
+      index: "正在写入注册表…",
+    },
+    successTitle: "已上线",
+    agentIdLabel: "交易",
+    viewCommunity: "在社区页查看",
+    launchAnother: "再创建一个",
+  },
+  agents: {
+    title: "社区代理",
+    subtitle: "社区创建的每一个代理，全部链上，全部自主。",
+    empty: "还没有代理，成为第一个创建者吧。",
+    emptyCta: "创建你的代理",
+    idLabel: "交易",
+    creatorLabel: "创建者",
+  },
+  docs: {
+    title: "文档",
+    intro: "关于 AGNT 实际运作方式的完整说明——部署流程、代币机制、注册表，以及接下来的计划。",
+    whatTitle: "什么是 AGNT",
+    whatText:
+      "AGNT 是在 BNB 链上部署小型自主代理最简单的方式。用日常语言描述你想要的东西，AGNT 就会为你部署——无需代码，无需基础设施，无需团队。每个代理上线后都会获得唯一编号，加入公开注册表，向整个社区可见。",
+    architectureTitle: "技术架构",
+    architectureIntro: "创建一个代理不是简单地写入数据库，而是一笔真实的钱包交易。点击部署后，实际发生的是这些：",
+    architectureSteps: [
+      "输入——你用日常语言描述代理的目的和行为方式。",
+      "签名——你的钱包对一笔交易签名，该描述作为 calldata 附在交易中。",
+      "确认——交易被广播并在 BNB 链上完成确认。",
+      "注册——AGNT 将该交易收录，并发布到社区页面。",
+    ],
+    lifecycleTitle: "代理生命周期",
+    lifecycleIntro: "点击部署后，每个代理都会经历相同的生命周期状态。",
+    lifecycleSteps: [
+      "草稿——已在创建页描述，尚未签名。",
+      "部署中——正在请求钱包签名，交易正在广播到 BNB 链。",
+      "已上线——链上确认完成，已收录进注册表，社区可见。",
+      "活跃——可被发现、可按分类筛选，永久留存于 AGNT 注册表。",
+    ],
+    registryTitle: "注册表",
+    registryText:
+      "注册表收录了每一笔发送到 AGNT 注册地址的代理创建交易。每条记录都由一笔真实交易支撑——你填写的名称、分类和描述都存放在该交易的 calldata 里，而不只是一个需要你盲目信任的数据库。任何人都可以在社区页面浏览索引、按分类筛选，并在 BscScan 上核实对应的交易。",
+    tokenTitle: "$AGNT 代币",
+    tokenIntro:
+      "$AGNT 是项目背后的社区代币，通过 four.meme 在 BNB 链上发行。没有私募，也没有团队额外分配——所有人都通过同一条曲线进入。",
+    launchMechanismTitle: "公平发射机制",
+    launchMechanismIntro:
+      "$AGNT 通过 four.meme 的联合曲线（bonding curve）模式发射，这也是 BNB 链上模因币通用的公平发射机制。",
+    launchSteps: [
+      "联合曲线——早期买家直接从曲线购买，价格随供应量变化。",
+      "曲线完成——曲线填满后，流动性自动生成。",
+      "迁移至 DEX——流动性迁移到公开的 DEX 交易池。",
+      "自由交易——$AGNT 自由交易，随时可在链上核实。",
+    ],
+    verificationTitle: "自行核实",
+    verificationText:
+      "AGNT 不需要你盲目相信一个后台面板。每一个代理都由一笔真实的 BNB 链钱包交易创建——它的 calldata、发送地址和确认状态全部公开可查。$AGNT 代币也是同样的逻辑：合约、持有人和流动性都在链上，可以在 BscScan 上独立核实。",
+    verificationPoints: [
+      "任意代理的交易哈希、发送地址及 calldata 内容",
+      "合约创建交易及创建者地址",
+      "持有人总数及分布情况",
+      "流动性池状态及是否锁定",
+      "每一笔转账记录，链上留痕，带时间戳",
+    ],
+    roadmapTitle: "路线图",
+    roadmapPhases: [
+      {
+        label: "阶段 0",
+        status: "done",
+        text: "网站上线、基于钱包的代理注册表、$AGNT 在 four.meme 公平发射。",
+      },
+      {
+        label: "阶段 1",
+        status: "active",
+        text: "代理分类、更丰富的资料展示、社区筛选功能。",
+      },
+      {
+        label: "阶段 2",
+        status: "planned",
+        text: "注册表内代理与代理之间的互动。",
+      },
+      {
+        label: "阶段 3",
+        status: "planned",
+        text: "社区投票推选精选代理。",
+      },
+    ],
+    faqTitle: "常见问题",
+    faq: [
+      {
+        q: "我需要写代码吗？",
+        a: "不需要。用日常语言描述你的代理，AGNT 会为你部署。",
+      },
+      {
+        q: "我的代理运行在哪里？",
+        a: "在 BNB 链上。每个代理都是一笔真实交易——它的 calldata、发送地址和确认状态都可以在 BscScan 上核实。",
+      },
+      {
+        q: "我需要钱包吗？",
+        a: "需要。创建代理意味着签署一笔真实的 BNB 链交易，所以你需要一个像 MetaMask 或 Trust Wallet 这样的钱包，并持有少量 BNB 用于支付网络手续费。",
+      },
+      {
+        q: "创建一个代理需要花钱吗？",
+        a: "只需要支付一笔交易的 BNB 网络手续费——通常只需几分钱。AGNT 本身不收取任何费用。",
+      },
+      {
+        q: "$AGNT 是一种投资吗？",
+        a: "$AGNT 是 BNB 链上的社区代币。本网站的所有内容均不构成投资建议——请自行研究。",
+      },
+      {
+        q: "任何人都可以创建代理吗？",
+        a: "可以。任何拥有钱包的人都可以在创建页面描述并创建代理。",
+      },
+      {
+        q: "我能创建多少个代理？有数量限制吗？",
+        a: "没有硬性限制，每个代理都需要独立的名称、描述，以及一笔独立的签名交易。",
+      },
+      {
+        q: "创建后可以修改代理吗？",
+        a: "不可以。交易一旦在链上确认就无法更改——请第一次就认真描述。",
+      },
+      {
+        q: "代理之间会互相交流吗？",
+        a: "目前还不会。代理间互动已列入路线图（阶段 2）。",
+      },
+      {
+        q: "$AGNT 的合约放弃权限了吗？流动性锁定了吗？",
+        a: "上线后请直接在 BscScan 上核实合约信息——不要轻信任何人的说法，包括我们。",
+      },
+      {
+        q: "我提交的创建信息会被如何处理？",
+        a: "你填写的代理名称、分类和描述会直接写入你那笔交易的 calldata——一旦确认，永久公开地留存在 BNB 链上。AGNT 的注册表只是为了方便浏览而对该交易做了索引，并不是数据的最终来源。",
+      },
+    ],
+  },
+  footer: {
+    tagline: "小小的代理，链上，自主运行。",
+    rights: "社区项目，非投资建议。",
+  },
+};
