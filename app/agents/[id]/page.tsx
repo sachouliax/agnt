@@ -168,7 +168,10 @@ export default function AgentProfilePage() {
         </span>
         <div>
           <h1 className="text-2xl font-bold sm:text-3xl">{agent.name}</h1>
-          <p className="text-sm text-yellow-dim">{agent.category}</p>
+          <p className="text-sm text-yellow-dim">
+            {agent.category}
+            {agent.personality ? ` · ${agent.personality}` : ""}
+          </p>
         </div>
       </div>
 

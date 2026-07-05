@@ -4,6 +4,7 @@ export type Agent = {
   id: string; // the onchain transaction hash — the real proof
   name: string;
   category: string;
+  personality: string; // tone/persona chosen at creation
   description: string;
   creator: string; // wallet address that signed the transaction
   createdAt: number;
@@ -19,6 +20,7 @@ const memoryStore: Agent[] = [];
 export type CreateAgentInput = {
   name: string;
   category: string;
+  personality: string;
   description: string;
   txHash: string;
   creator: string;
@@ -28,6 +30,7 @@ export function validateAgentInput(input: Partial<CreateAgentInput>) {
   const name = (input.name ?? "").trim();
   const description = (input.description ?? "").trim();
   const category = (input.category ?? "Other").trim();
+  const personality = (input.personality ?? "").trim().slice(0, 40);
   const txHash = (input.txHash ?? "").trim();
   const creator = (input.creator ?? "").trim();
 
@@ -43,7 +46,10 @@ export function validateAgentInput(input: Partial<CreateAgentInput>) {
   if (!/^0x[0-9a-fA-F]{40}$/.test(creator)) {
     return { ok: false as const, error: "creator" as const };
   }
-  return { ok: true as const, value: { name, category, description, txHash, creator } };
+  return {
+    ok: true as const,
+    value: { name, category, personality, description, txHash, creator },
+  };
 }
 
 export async function createAgent(input: CreateAgentInput): Promise<Agent> {
@@ -51,6 +57,7 @@ export async function createAgent(input: CreateAgentInput): Promise<Agent> {
     id: input.txHash,
     name: input.name,
     category: input.category,
+    personality: input.personality,
     description: input.description,
     creator: input.creator,
     createdAt: Date.now(),
@@ -70,7 +77,11 @@ export async function createAgent(input: CreateAgentInput): Promise<Agent> {
 export async function listAgents(): Promise<Agent[]> {
   if (redis) {
     const raw = await redis.lrange<string | Agent>(REDIS_KEY, 0, MAX_AGENTS - 1);
-    return raw.map((item) => (typeof item === "string" ? JSON.parse(item) : item));
+    return raw.map((item) => {
+      const parsed: Agent = typeof item === "string" ? JSON.parse(item) : item;
+      // Older records predate the personality field.
+      return { ...parsed, personality: parsed.personality ?? "" };
+    });
   }
   return memoryStore;
 }

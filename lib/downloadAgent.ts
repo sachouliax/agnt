@@ -1,25 +1,14 @@
 import type { Agent } from "./agents";
-import { BSCSCAN_TX_BASE, BSC_CHAIN_ID, REGISTRY_ADDRESS } from "./config";
+import { buildAgentSpec } from "./agentSpec";
 
-// Exports a deployed agent as a portable, self-describing manifest file.
-// This is the "install / export" artifact: it carries the agent's identity
-// plus its onchain proof, so it can be shared or re-imported later.
+// Exports a deployed agent as a complete, portable, runnable spec file.
+// It carries the agent's identity, its onchain proof, AND its runtime brain
+// (system prompt + model) — so it can be shared, re-imported, or dropped into
+// any Claude-compatible runtime to reproduce the exact same agent.
 export function downloadAgent(agent: Agent) {
-  const manifest = {
-    format: "agnt-agent",
-    version: 1,
-    id: agent.id,
-    name: agent.name,
-    category: agent.category,
-    description: agent.description,
-    creator: agent.creator,
-    createdAt: agent.createdAt,
-    chain: { name: "BNB Chain", chainId: BSC_CHAIN_ID },
-    registry: REGISTRY_ADDRESS,
-    proof: `${BSCSCAN_TX_BASE}${agent.id}`,
-  };
+  const spec = buildAgentSpec(agent);
 
-  const blob = new Blob([JSON.stringify(manifest, null, 2)], {
+  const blob = new Blob([JSON.stringify(spec, null, 2)], {
     type: "application/json",
   });
   const url = URL.createObjectURL(blob);

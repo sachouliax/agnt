@@ -24,8 +24,10 @@ export default function LaunchPage() {
   const { sendTransactionAsync } = useSendTransaction();
   const publicClient = usePublicClient();
 
+  const personalities = t.launch.personalities;
   const [name, setName] = useState("");
   const [category, setCategory] = useState<string>(categories[0]);
+  const [personality, setPersonality] = useState<string>(personalities[0]);
   const [description, setDescription] = useState("");
   const [fieldError, setFieldError] = useState<"name" | "description" | null>(null);
   const [stage, setStage] = useState<Stage | "idle">("idle");
@@ -65,6 +67,7 @@ export default function LaunchPage() {
         data: encodeAgentPayload({
           name: trimmedName,
           category,
+          personality,
           description: trimmedDescription,
         }),
         type: "legacy",
@@ -105,6 +108,7 @@ export default function LaunchPage() {
         body: JSON.stringify({
           name: trimmedName,
           category,
+          personality,
           description: trimmedDescription,
           txHash: hash,
           creator: address,
@@ -134,6 +138,7 @@ export default function LaunchPage() {
     setName("");
     setDescription("");
     setCategory(categories[0]);
+    setPersonality(personalities[0]);
   }
 
   return (
@@ -195,6 +200,23 @@ export default function LaunchPage() {
                 {categories.map((c) => (
                   <option key={c} value={c}>
                     {c}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div>
+              <label className="mb-2 block text-sm font-semibold">
+                {t.launch.fieldPersonality}
+              </label>
+              <select
+                value={personality}
+                onChange={(e) => setPersonality(e.target.value)}
+                className="w-full rounded-none border border-border bg-surface px-4 py-3 outline-none focus:border-yellow-dim"
+              >
+                {personalities.map((p) => (
+                  <option key={p} value={p}>
+                    {p}
                   </option>
                 ))}
               </select>

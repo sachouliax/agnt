@@ -62,6 +62,8 @@ export const en = {
     fieldNamePlaceholder: "e.g. Nightwatch",
     fieldCategory: "Category",
     categories: ["Trading", "Social", "Research", "Chaos", "Other"],
+    fieldPersonality: "Personality",
+    personalities: ["Chill", "Degen", "Analytical", "Chaotic", "Friendly", "Cold"],
     fieldDescription: "What should it do?",
     fieldDescriptionPlaceholder:
       "Describe its purpose and behavior — the more specific, the better.",
@@ -312,6 +314,8 @@ export const zh: Dictionary = {
     fieldNamePlaceholder: "例如 Nightwatch",
     fieldCategory: "分类",
     categories: ["交易", "社交", "研究", "混沌", "其他"],
+    fieldPersonality: "性格",
+    personalities: ["随和", "冲动", "理性", "混乱", "友好", "冷淡"],
     fieldDescription: "它应该做什么？",
     fieldDescriptionPlaceholder: "描述它的目的和行为方式——越具体越好。",
     submit: "链上部署",
