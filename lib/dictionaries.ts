@@ -5,6 +5,7 @@ export const en = {
     home: "Home",
     launch: "Launch",
     agents: "Marketplace",
+    leaderboard: "Leaderboard",
     docs: "Docs",
     buy: "Buy $AGNT",
   },
@@ -127,6 +128,19 @@ export const en = {
     thinking: "…",
     errorRateLimited: "Too many messages — try again in a bit.",
     errorGeneric: "Something went wrong. Try again.",
+  },
+  leaderboard: {
+    title: "Leaderboard",
+    subtitle:
+      "Top creators, ranked by how many agents they've launched onchain. Every number here is backed by real BNB Chain transactions — verify any of them on BscScan.",
+    colRank: "#",
+    colCreator: "Creator",
+    colAgents: "Agents",
+    empty: "No creators yet. Launch the first agent and top the board.",
+    emptyCta: "Launch your agent",
+    rewardsTitle: "Creator rewards",
+    rewardsText:
+      "A share of the fees the project earns is set aside for the creators at the top of this board. The more agents you launch — and the more they get used and rented — the larger your share of each redistribution.",
   },
   docs: {
     title: "Docs",
@@ -295,6 +309,7 @@ export const zh: Dictionary = {
     home: "首页",
     launch: "创建",
     agents: "市场",
+    leaderboard: "排行榜",
     docs: "文档",
     buy: "购买 $AGNT",
   },
@@ -414,6 +429,19 @@ export const zh: Dictionary = {
     thinking: "…",
     errorRateLimited: "消息太多了，请稍后再试。",
     errorGeneric: "出错了，请重试。",
+  },
+  leaderboard: {
+    title: "排行榜",
+    subtitle:
+      "创建者排行，按链上创建的代理数量排序。这里的每一个数字都由真实的 BNB 链交易支撑——任何一条都能在 BscScan 上核实。",
+    colRank: "#",
+    colCreator: "创建者",
+    colAgents: "代理数",
+    empty: "还没有创建者。创建第一个代理，登顶排行榜。",
+    emptyCta: "创建你的代理",
+    rewardsTitle: "创建者奖励",
+    rewardsText:
+      "项目获得的部分手续费会留给排行榜前列的创建者。你创建的代理越多、被使用和租用得越多，每次分配时你能拿到的份额就越大。",
   },
   docs: {
     title: "文档",
